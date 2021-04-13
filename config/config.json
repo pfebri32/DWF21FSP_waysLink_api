@@ -18,7 +18,10 @@
     "dialect": "postgress",
     "protocol": "postgress",
     "dialectOptions": {
-      "ssl": true
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
     }
   }
 }

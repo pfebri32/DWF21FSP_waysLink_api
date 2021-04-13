@@ -18,11 +18,15 @@ module.exports = {
           name: 'Template A',
           img: 'Phone1.png',
           userId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Template B',
           img: 'Phone2.png',
           userId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}
