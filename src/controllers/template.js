@@ -8,11 +8,13 @@ const { Template } = require('../../models');
 exports.addTemplate = async (req, res) => {
   try {
     // Initials.
-    const { body, files, user } = req;
+    const { body, user } = req;
+    // const { body, files, user } = req;
 
     // Validate inputs.
     const schema = Joi.object({
       name: Joi.string().min(3).required(),
+      img: Joi.string(),
     });
     const { error } = schema.validate(body);
 
@@ -24,19 +26,23 @@ exports.addTemplate = async (req, res) => {
     }
 
     // Validate data.
-    if (!files.img) {
-      return res.status(422).send({
-        status: 'invalid',
-        message: 'You need to pick image to use.',
-      });
-    }
+    // if (!files.img) {
+    //   return res.status(422).send({
+    //     status: 'invalid',
+    //     message: 'You need to pick image to use.',
+    //   });
+    // }
 
     // Create new template.
     await Template.create({
       ...body,
-      img: files.img[0].filename,
       userId: user.id,
     });
+    // await Template.create({
+    //   ...body,
+    //   img: files.img[0].filename,
+    //   userId: user.id,
+    // });
 
     res.send({
       status: 'success',

@@ -36,12 +36,13 @@ router.delete('/user', auth, deleteSelf);
 
 // Template routes.
 router.get('/template/:id', getTemplateById);
-router.post(
-  '/template',
-  auth,
-  upload([{ name: 'img', maxCount: 1 }]),
-  addTemplate
-);
+router.post('/template', auth, addTemplate);
+// router.post(
+//   '/template',
+//   auth,
+//   upload([{ name: 'img', maxCount: 1 }]),
+//   addTemplate
+// );
 
 // Templates routes.
 router.get('/templates', auth, getAllTemplates);
