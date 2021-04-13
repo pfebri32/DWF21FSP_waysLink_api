@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Wayslink API",
   "main": "index.js",
+  "engines": { 
+      "node": "8.9.4" 
+   },
   "scripts": {
     "start": "nodemon index.js"
   },
